@@ -1,2 +1,8 @@
 Flask==2.3.3
 mysql-connector-python==8.1.0
+flask
+mysql-connector-python
+joblib
+numpy
+scikit-learn
+pandas
