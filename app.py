@@ -32,8 +32,13 @@ def get_db():
 
 get_db_connection = get_db
 
-classifier_data = joblib.load('ml/classifier.pkl')
-risk_data = joblib.load('ml/risk_scorer.pkl')
+try:
+    classifier_data = joblib.load('ml/classifier.pkl')
+    risk_data = joblib.load('ml/risk_scorer.pkl')
+except Exception as e:
+    print(f"[ML] Models not loaded: {e}")
+    classifier_data = None
+    risk_data = None
 
 # ─────────────────────────────────────────────
 # Auth decorators
